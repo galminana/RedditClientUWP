@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Humanizer;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,10 +22,10 @@ namespace Reddit.Core.Models
     public class Child
     {
         public string kind { get; set; }
-        public Data1 data { get; set; }
+        public Post data { get; set; }
     }
 
-    public class Data1
+    public class Post
     {
         public string domain { get; set; }
         public object banned_by { get; set; }
@@ -69,6 +70,9 @@ namespace Reddit.Core.Models
         public bool visited { get; set; }
         public object num_reports { get; set; }
         public object distinguished { get; set; }
+        public string created_redeable { get {
+                return new DateTime(1970,1,1).AddSeconds( Convert.ToInt64(created)).Humanize();
+            } }
     }
 
     public class Media_Embed
