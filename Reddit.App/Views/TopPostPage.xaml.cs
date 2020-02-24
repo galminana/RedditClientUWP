@@ -1,4 +1,5 @@
-﻿using Reddit.App.ViewModels;
+﻿using Reddit.App.Models;
+using Reddit.App.ViewModels;
 using Reddit.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ namespace Reddit.App.Views
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ViewModel.Selected = (Post)e.ClickedItem;
+            ViewModel.Select((RedditListItem)e.ClickedItem);
         }
     }
 }

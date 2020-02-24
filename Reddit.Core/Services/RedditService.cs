@@ -13,7 +13,7 @@ namespace Reddit.Core.Services
         public static async Task<RedditDTO> GetTopPost()
         {
             var client = new RestClient("https://www.reddit.com/r");
-            var request = new RestRequest("SWGalaxyOfHeroes/top.json", DataFormat.Json);
+            var request = new RestRequest("pics/top.json", DataFormat.Json);
             var response = client.Get(request);
             var result = JsonConvert.DeserializeObject<RedditDTO>(response.Content);
 
